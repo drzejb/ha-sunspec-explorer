@@ -1,0 +1,32 @@
+name: "HA SunSpec Explorer"
+version: "0.0.1"
+slug: "ha_sunspec_explorer"
+description: "SunSpec Modbus Explorer"
+
+startup: manual
+boot: manual
+
+init: false
+
+host_network: true
+
+arch:
+  - amd64
+  - aarch64
+
+map:
+  - addon_config:rw
+
+options:
+  host: ""
+  port: 502
+  slave: 1
+  timeout: 5
+  debug: true
+
+schema:
+  host: str
+  port: port
+  slave: int
+  timeout: int
+  debug: bool
